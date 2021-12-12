@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="com.base.base_app.ui.main.MainActivity">
+    tools:context="com.globallogic.pokemon.ui.main.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,44 +18,65 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/kalameh_black"
+            android:fontFamily="@font/comet_font"
             android:gravity="center"
-            android:text="@string/insurance_marketing"
+            android:text="@string/app_name"
             android:textColor="@color/colorwhite"
             android:textSize="20sp" />
     </androidx.appcompat.widget.Toolbar>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
-
-    <FrameLayout
-        android:id="@+id/main_frame_layout"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/normalTxtView"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:textSize="@dimen/ui_text_medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/ui_large_size_16"
+        android:textColor="@color/colorwhite"
+        android:id="@+id/txtName"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/normalTxtView"
+        app:layout_constraintTop_toBottomOf="@id/txtName"
+        app:layout_constraintStart_toStartOf="@id/staticLinear"
+        android:id="@+id/txtStatic"
+        android:text="@string/static_img"
+        android:textColor="@color/colorwhite"
+        android:layout_margin="@dimen/ui_large_size_16"/>
+    <include
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/colorToolbar"
-        android:theme="@style/Widget.BottomNavigationView"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtStatic"
+        layout="@layout/layout_image"
+        android:layout_margin="@dimen/ui_large_size_16"
+        android:id="@+id/staticLinear"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/normalTxtView"
+        app:layout_constraintTop_toBottomOf="@id/staticLinear"
+        app:layout_constraintStart_toStartOf="@id/staticLinear"
+        android:id="@+id/txtDynamic"
+        android:text="@string/dynamic_img"
+        android:textColor="@color/colorwhite"
+        android:layout_margin="@dimen/ui_large_size_16"/>
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtDynamic"
+        layout="@layout/layout_image"
+        android:layout_margin="@dimen/ui_large_size_16"
+        android:id="@+id/dynamicLinear"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGenerate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_frame_layout"
-        app:itemTextColor="@drawable/navigation_view_selector"
-        app:itemIconTint="@drawable/navigation_view_selector"
+        android:layout_margin="@dimen/ui_large_size_16"
+        android:background="@drawable/button_background"
+        app:layout_constraintTop_toBottomOf="@id/dynamicLinear"
+        android:text="@string/generate"/>
 
-        app:menu="@menu/main" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

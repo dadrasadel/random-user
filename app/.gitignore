@@ -1,1 +1,12 @@
-/build
+.gradle
+build/
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/sonarlint
+.idea
+.idea/codeStyles
+.idea/libraries

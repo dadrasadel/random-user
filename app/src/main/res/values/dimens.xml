@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    region boirder-->
+    <dimen name="ui_line_size_1">1dp</dimen>
+    <dimen name="ui_thin_size_2">2dp</dimen>
+    <dimen name="ui_small_size_4">4dp</dimen>
+    <dimen name="ui_normal_size_8">8dp</dimen>
+    <dimen name="ui_big_size_12">12dp</dimen>
+    <dimen name="ui_large_size_16">16dp</dimen>
+    <dimen name="ui_huge_size_24">24dp</dimen>
+    <dimen name="ui_xlarge_size_32">32dp</dimen>
+<!--    <endregion-->
+<!--    region txtsize-->
+    <dimen name="ui_text_nano">10sp</dimen>
+    <dimen name="ui_text_micro">12sp</dimen>
+    <dimen name="ui_text_small">14sp</dimen>
+    <dimen name="ui_text_normal">16sp</dimen>
+    <dimen name="ui_text_medium">18sp</dimen>
+    <dimen name="ui_text_big">20sp</dimen>
+    <dimen name="ui_text_large">22sp</dimen>
+<!--    endregion-->
+</resources>

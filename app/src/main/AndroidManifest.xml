@@ -3,31 +3,21 @@
     package="com.example.bilerplatemvvm">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:name="com.base.bime.BaseApp"
+        android:name="com.globallogic.pokemon.Pokomon"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_app"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.base.base_app.ui.main.MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        android:roundIcon="@mipmap/ic_app"
+        android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.globallogic.pokemon.ui.main.MainActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.base.base_app.ui.login.LoginActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
-            >
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
 
     </application>
