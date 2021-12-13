@@ -1,2 +1,2 @@
-include ':app',':persiandatepicker'
+include ':app'
 rootProject.name = "Pokemon"
