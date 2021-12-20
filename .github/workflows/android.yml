@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
+          distribution: 'adopt'
       - name: Unit tests
         run: bash ./gradlew test --stacktrace
 #name: Android Pull Request & Master CI
