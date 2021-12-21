@@ -5,8 +5,13 @@ before_script:
   - export GRADLE_USER_HOME=$(pwd)/.gradle
   - chmod +x ./gradlew
 stages:
-  - build
   - test
+  - build
+
+debugTests:
+  stage: test
+  script:
+    - ./gradlew -Pci --console=plain :app:testDebug
 
 
 lintDebug:
@@ -23,7 +28,3 @@ assembleDebug:
       - app/build/outputs/apk/develop/debug/
 
 
-debugTests:
-  stage: test
-  script:
-    - ./gradlew -Pci --console=plain :app:testDebug
