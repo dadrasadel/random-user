@@ -33,7 +33,7 @@ class ApiServiceTest {
         Assert.assertEquals(result, response)
     }
     @Test
-    fun `pokemon expext valid data`() = runBlocking {
+    fun `pokemon expect valid data`() = runBlocking {
         //Given
         val id = Random.nextInt(0, 150)
         val response = Response.success(pokemonResult)
