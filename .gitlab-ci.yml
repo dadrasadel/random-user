@@ -10,15 +10,21 @@ cache:
     - .gradle/
 
 stages:
+  -  test
   - build
-  - test
   - release
   - deploy
 
-lintDebug:
-  stage: build
+#lintDebug:
+#  stage: build
+#  script:
+#    - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
+
+testDebug:
+  stage: test
   script:
-    - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
+    - ./gradlew -Pci --console=plain :app:testDebug
+
 
 assembleDebug:
   stage: build
@@ -30,10 +36,7 @@ assembleDebug:
       - CHANGELOG
 
 
-testDebug:
-  stage: test
-  script:
-    - ./gradlew -Pci --console=plain :app:testDebug
+
 
 #assembleRelease:
 #  stage: release
