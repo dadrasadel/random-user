@@ -1,45 +1,67 @@
-# This file is a template, and might need editing before it works on your project.
-# To contribute improvements to CI/CD templates, please follow the Development guide at:
-# https://docs.gitlab.com/ee/development/cicd/templates.html
-# This specific template is located at:
-# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
+image: jangrewe/gitlab-ci-android
 
-# This is a sample GitLab CI/CD configuration file that should run without any modifications.
-# It demonstrates a basic 3 stage CI/CD pipeline. Instead of real tests or scripts,
-# it uses echo commands to simulate the pipeline execution.
-#
-# A pipeline is composed of independent jobs that run scripts, grouped into stages.
-# Stages run in sequential order, but jobs within stages run in parallel.
-#
-# For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
+before_script:
+  - export GRADLE_USER_HOME=$(pwd)/.gradle
+  - chmod +x ./gradlew
 
-stages:          # List of stages for jobs, and their order of execution
+cache:
+  key: ${CI_PROJECT_ID}
+  paths:
+    - .gradle/
+
+stages:
   - build
   - test
+  - release
   - deploy
 
-build-job:       # This job runs in the build stage, which runs first.
+lintDebug:
   stage: build
   script:
-    - echo "Compiling the code..."
-    - echo "Compile complete."
+    - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
 
-unit-test-job:   # This job runs in the test stage.
-  stage: test    # It only starts when the job in the build stage completes successfully.
+assembleDebug:
+  stage: build
   script:
-    - echo "Running unit tests... This will take about 60 seconds."
-    - sleep 60
-    - echo "Code coverage is 90%"
+    - ./gradlew assembleDebug
+  artifacts:
+    paths:
+      - app/build/outputs/apk/develop/debug/app-develop-debug.apk
+      - CHANGELOG
 
-lint-test-job:   # This job also runs in the test stage.
-  stage: test    # It can run at the same time as unit-test-job (in parallel).
-  script:
-    - echo "Linting code... This will take about 10 seconds."
-    - sleep 10
-    - echo "No lint issues found."
 
-deploy-job:      # This job runs in the deploy stage.
-  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+testDebug:
+  stage: test
   script:
-    - echo "Deploying application..."
-    - echo "Application successfully deployed."
+    - ./gradlew -Pci --console=plain :app:testDebug
+
+#assembleRelease:
+#  stage: release
+#  script:
+#    - echo $KEYSTORE_FILE | base64 -d > my.keystore
+#    - ./gradlew assembleRelease
+#      -Pandroid.injected.signing.store.file=$(pwd)/my.keystore
+#      -Pandroid.injected.signing.store.password=$KEYSTORE_PASSWORD
+#      -Pandroid.injected.signing.key.alias=$KEY_ALIAS
+#      -Pandroid.injected.signing.key.password=$KEY_PASSWORD
+#  artifacts:
+#    paths:
+#      - app/build/outputs/apk/release
+#      - CHANGELOG
+#
+#deployRelease:
+#  image: python:3.5.2
+#  stage: deploy
+#  script:
+#    - pip install requests
+#    - git clone https://github.com/mega-arbuz/apk-release-deploy.git
+#    - python apk-release-deploy/deploy.py
+#      --release.dir=app/build/outputs/apk/release
+#      --app.name=BestAppEver
+#      --dropbox.token=$DROPBOX_TOKEN
+#      --dropbox.folder=release
+#      --changelog.file=CHANGELOG
+#      --template.file=TEMPLATE
+#      --zapier.hook=$ZAPIER_EMAIL_HOOK
+#      --email.to=$EMAIL_TARGET
+  cache: {}
