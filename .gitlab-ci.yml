@@ -1,30 +1,38 @@
 image: vratislav/gitlab-ci-fastlane-android
 
+stages:
+  - build
+  - test
+#  - deploy
 
 before_script:
   - export GRADLE_USER_HOME=$(pwd)/.gradle
   - chmod +x ./gradlew
-stages:
-  - test
-  - build
 
-debugTests:
-  stage: test
-  script:
-    - ./gradlew -Pci --console=plain :app:testDebug
+cache:
+  key: ${CI_PROJECT_ID}
+  paths:
+    - .gradle/
 
-
-lintDebug:
-  stage: build
-  script:
-    - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
-
-assembleDebug:
+build:
   stage: build
   script:
     - ./gradlew assembleDebug
   artifacts:
     paths:
-      - app/build/outputs/apk/develop/debug/
+      - app/build/outputs/apk/develop/debug/app-develop-debug.apk
 
 
+debugTests:
+  stage: test
+  script:
+    - ./gradlew test
+
+
+
+#deploy_internal:
+#  stage: deploy
+#  only:
+#    - master
+#  script:
+#    - fastlane slack_build
