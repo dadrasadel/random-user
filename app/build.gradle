@@ -11,15 +11,14 @@ android {
         viewBinding = true
     }
     defaultConfig {
-        applicationId "com.globallogic.pokemon"
+        applicationId "com.opeqe.userrandom"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "com.globallogic.pokemon.HiltTestRunner"
+        testInstrumentationRunner "com.opeque.userrandom.HiltTestRunner"
 //        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-
 
     }
     // work-runtime-ktx 2.1.0 and above now requires Java 8
@@ -32,7 +31,8 @@ android {
                     [
                             'src/main/res/layouts',
                             'src/main/res',
-                            'src/main/res/layouts/main'
+                            'src/main/res/layouts/main',
+                            'src/main/res/layouts/main/user_detail'
                     ]
         }
     }
@@ -41,9 +41,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-//    packagingOptions {
-//        resources.excludes.add("META-INF/*")
-//    }
     testOptions {
         animationsDisabled = true
     }

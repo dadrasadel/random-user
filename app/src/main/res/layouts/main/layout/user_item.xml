@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:minHeight="80dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/gray_border">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgPerson"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:layout_margin="@dimen/ui_normal_size_8"
+        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comet_font"
+        app:layout_constraintStart_toEndOf="@+id/imgPerson"
+        android:id="@+id/tvPersonName"
+        android:textSize="@dimen/ui_text_medium"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvEmail"
+        android:layout_marginStart="@dimen/ui_normal_size_8"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comet_font"
+        app:layout_constraintStart_toEndOf="@+id/imgPerson"
+        android:id="@+id/tvEmail"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPersonName"
+        android:layout_marginStart="@dimen/ui_normal_size_8"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/right_arrow"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

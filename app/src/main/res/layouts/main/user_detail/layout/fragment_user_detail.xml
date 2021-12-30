@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.opeqe.userrandom.ui.main.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/toolbar_bg"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comet_font"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/colorwhite"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgPerson"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/ui_normal_size_8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintWidth_percent="0.15" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/ui_normal_size_8"
+            app:layout_constraintTop_toBottomOf="@id/imgPerson">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorwhite"
+                android:fontFamily="@font/comet_font"
+                android:textSize="@dimen/ui_text_medium"
+                android:id="@+id/tvName"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorwhite"
+                android:layout_marginTop="@dimen/ui_normal_size_8"
+                android:fontFamily="@font/comet_font"
+                android:textSize="@dimen/ui_text_medium"
+                android:id="@+id/tvEmail"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorwhite"
+                android:layout_marginTop="@dimen/ui_normal_size_8"
+                android:textSize="@dimen/ui_text_medium"
+                android:fontFamily="@font/comet_font"
+                android:id="@+id/tvLocation"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorwhite"
+                android:layout_marginTop="@dimen/ui_normal_size_8"
+                android:textSize="@dimen/ui_text_medium"
+                android:fontFamily="@font/comet_font"
+                android:id="@+id/tvPhone"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorwhite"
+                android:layout_marginTop="@dimen/ui_normal_size_8"
+                android:textSize="@dimen/ui_text_medium"
+                android:fontFamily="@font/comet_font"
+                android:id="@+id/tvGender"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorwhite"
+                android:layout_marginTop="@dimen/ui_normal_size_8"
+                android:textSize="@dimen/ui_text_medium"
+                android:fontFamily="@font/comet_font"
+                android:id="@+id/tvUserName"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorwhite"
+                android:layout_marginTop="@dimen/ui_normal_size_8"
+                android:textSize="@dimen/ui_text_medium"
+                android:fontFamily="@font/comet_font"
+                android:id="@+id/tvPassword"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorwhite"
+                android:layout_marginTop="@dimen/ui_normal_size_8"
+                android:textSize="@dimen/ui_text_medium"
+                android:fontFamily="@font/comet_font"
+                android:id="@+id/tvPasscode"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorwhite"
+                android:layout_marginTop="@dimen/ui_normal_size_8"
+                android:textSize="@dimen/ui_text_medium"
+                android:fontFamily="@font/comet_font"
+                android:id="@+id/tvAge"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

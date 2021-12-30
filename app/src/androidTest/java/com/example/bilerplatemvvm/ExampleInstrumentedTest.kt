@@ -20,8 +20,8 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         if (BuildConfig.DEBUG)
-            assertEquals("com.globallogic.pokemon.develope", appContext.packageName)
+            assertEquals("com.opeqe.userrandom.develope", appContext.packageName)
         else
-            assertEquals("com.globallogic.pokemon", appContext.packageName)
+            assertEquals("com.opeqe.userrandom", appContext.packageName)
     }
 }

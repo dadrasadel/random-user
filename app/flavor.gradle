@@ -1,9 +1,9 @@
 android {
     defaultConfig {
         buildConfigField("int", "DB_SCHEMA_VERSION", "1")
-        buildConfigField("String", "BASE_URL", "\"https://pokeapi.co/api/v2/\"")
-        resValue "string", "app_name", "pokemon"
-        resValue "string", "db_name", "pokemonDb"
+        buildConfigField("String", "BASE_URL", "\"https://randomuser.me\"")
+        resValue "string", "app_name", "randomuser"
+        resValue "string", "db_name", "randomuser"
     }
 
     flavorDimensions "develop"
@@ -34,12 +34,9 @@ android {
         develop {
             dimension "develop"
 
-//            applicationIdSuffix '.develope'
-
         }
         production {
-            resValue "string", "app_name", "pokemon"
-            buildConfigField("String", "BASE_URL", "\"https://pwa.rb24.ir/\"")
+            resValue "string", "app_name", "random_user"
 
         }
     }

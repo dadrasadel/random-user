@@ -8,7 +8,18 @@
     <string name="static_img">static</string>
     <string name="dynamic_img">dynamic</string>
     <string name="generate">generate</string>
+    <string name="gender">Gender:  %1$s</string>
+    <string name="name">Name:  %1$s</string>
+    <string name="email">Email:  %1$s</string>
+    <string name="state">State:  %1$s</string>
+    <string name="phone">Phone:  %1$s</string>
+    <string name="username">Username:  %1$s</string>
+    <string name="password">Password:  %1$s</string>
+    <string name="location">Location:  %1$s</string>
+    <string name="postcode">Postcode:  %1$s</string>
+    <string name="age">Age:  %1$s</string>
     <string name="NetWork_error">can\'t access to Internet</string>
+
 
 <!--    endregion-->
 

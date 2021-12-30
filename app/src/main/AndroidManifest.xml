@@ -3,7 +3,7 @@
     package="com.example.bilerplatemvvm">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:name="com.globallogic.pokemon.Pokomon"
+        android:name="com.opeqe.userrandom.UserRandom"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app"
         android:label="@string/app_name"
@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.globallogic.pokemon.ui.main.MainActivity"
+        <activity android:name="com.opeqe.userrandom.ui.main.MainActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:screenOrientation="portrait">
             <intent-filter>
